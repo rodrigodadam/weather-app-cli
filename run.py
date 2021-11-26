@@ -21,12 +21,29 @@ def get_weather():
         api_url = "https://api.openweathermap.org/data/2.5/weather?q={}&appid={}".format(city, KEY)
         result = requests.get(api_url)
         data = result.json()
+
+        temp = ((data['main']['temp']) - 273.15)
+        feels_like = ((data['main']['feels_like']) - 273.15)
+        weather_description = data['weather'][0]['description']
+        air_humidity = data['main']['humidity']
+        wind_speed = data['wind']['speed']
+        date_time = datetime.now().strftime("%d %b %Y")
         
         if validate_city(data, city):
             break
     
-    return data
+        
 
+
+    print("***************************************************")
+    print(f"Weather Status for {city} - Today {date_time}")
+    print("***************************************************")
+
+    print(f"Current Temperature is ------> {temp:.2f} degrees Celsius")
+    print(f"Feels Like ------------------> {feels_like:.2f} degrees Celsius")
+    print(f"Current Weather Description -> {weather_description}")
+    print(f"Current Humidity ------------> {air_humidity}%")
+    print(f"Current Wind Speed-----------> {wind_speed} kmph")
 
     
 
