@@ -20,18 +20,18 @@ def get_weather():
     api_url = "https://api.openweathermap.org/data/2.5/weather?q={}&appid={}".format(city, KEY)
     result = requests.get(api_url)
     data = result.json()
-    validate_city(data)
+    validate_city(data, city)
     
 
 
-def validate_city(data):
+def validate_city(data, city):
     """
     Validate the City name
     If the city name are not inside the API db get a error and try again
     Else, give all info to client
     """
     if data['cod'] == '404':
-        print("Invalid City: {}, Please check your city name")
+        print(f"Invalid City: {city}. Please check the city name provided.")
     else:
         return print(data)
 
