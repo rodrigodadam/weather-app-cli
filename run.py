@@ -2,7 +2,8 @@ import requests
 import os
 from datetime import datetime
 
-API_KEY = os.environ.get('API_KEY')
+
+KEY = os.environ.get('API_KEY')
 
 
 def get_weather():
@@ -14,7 +15,10 @@ def get_weather():
     print("Exemple: Dublin")
 
     city = input("Enter the city name here: ")
-    print(f"This is your provided city: {city}")
+    # print(f"This is your provided city: {city}")
+    api_url = "https://api.openweathermap.org/data/2.5/weather?q={}&appid={}".format(city, KEY)
+    r = requests.get(api_url)
+    return r.json()
 
 
-get_weather()
+print(get_weather())
