@@ -1,7 +1,8 @@
 import requests
 import os
 from datetime import datetime
-
+if os.path.exists("env.py"):
+    import env
 
 KEY = os.environ.get('API_KEY')
 
