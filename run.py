@@ -13,8 +13,8 @@ def get_weather():
     """
     while True:
         print("Please Enter the City Name and Country Code.")
-        print("City should be a real city.")
-        print("Exemple: London,GB")
+        print("City should be a real city follow correct Country CODE.")
+        print("Example: City -> London, Country -> GB")
 
         city = input("Enter the city name here: ")
         country = input("Enter the country CODE: ")
@@ -25,7 +25,7 @@ def get_weather():
         result = requests.get(api_url)
         data = result.json()
 
-        if validate_city(data, city):
+        if validate_city(data, country, city):
             break
 
     temp = ((data['main']['temp']) - 273.15)
@@ -52,14 +52,20 @@ def get_weather():
     print(f"Current Wind Speed------------> {wind_speed} kmph")
 
 
-def validate_city(data, city):
+def validate_city(data, country, city):
     """
     Validate the City name
     If the city name are not inside the API db get a error and try again
     Else, give all info to client
     """
     if data['cod'] == '404':
-        print(f"Invalid City: {city}. Please check the city name provided.")
+        print("***********************************************")
+        print(f"Invalid City or Country: {city},{country}.")
+        print("Please check the city name and country code provided")
+        print("Please insert a valid Country CODE with 2 letters")
+        print("The country code and city need match")
+        print("Example: DUBLIN - IE for city Dublin and country Ireland")
+        print("***********************************************")
         return False
     else:
         return True
