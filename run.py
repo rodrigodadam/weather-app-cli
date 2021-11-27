@@ -1,5 +1,6 @@
 import requests
 import os
+import re
 from datetime import datetime
 if os.path.exists("env.py"):
     import env
@@ -58,6 +59,18 @@ def validate_city(data, country, city):
     If the city name are not inside the API db get a error and try again
     Else, give all info to client
     """
+    if not re.search("^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$", city):
+        print("***********************************************")
+        print("Please DO NOT use special characters or numbers")
+        print("***********************************************")
+        return False
+
+    if not re.search("^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$", country):
+        print("***********************************************")
+        print("Please DO NOT use special characters or numbers")
+        print("***********************************************")
+        return False
+        
     if data['cod'] == '404':
         print("***********************************************")
         print(f"Invalid City or Country: {city},{country}.")
