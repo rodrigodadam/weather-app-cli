@@ -20,12 +20,14 @@ def get_weather():
         city = input("Enter the city name here: ")
         country = input("Enter the country CODE: ")
 
-        payload = api_request(city, country, KEY)
-        result = requests.get(payload)
-        data = result.json()
+        if input_validation(city, country):
+            payload = api_request(city, country, KEY)
+            result = requests.get(payload)
+            data = result.json()
 
-        if validate_city(data, country, city):
-            break
+            if validate_city(data, country, city):
+                print("City and Country are Valid!")
+                break
 
     temp = ((data['main']['temp']) - 273.15)
     feels_like = ((data['main']['feels_like']) - 273.15)
@@ -55,6 +57,21 @@ def validate_city(data, country, city):
     If the city name are not inside the API db get a error and try again
     Else, give all info to client
     """
+
+    if data['cod'] == '404':
+        print("***********************************************")
+        print(f"Invalid City or Country: {city},{country}.")
+        print("Please check the city name and country code provided")
+        print("Please insert a valid Country CODE with 2 letters")
+        print("The country code and city need match")
+        print("Example: DUBLIN - IE for city Dublin and country Ireland")
+        print("***********************************************")
+        return False
+    return True
+
+
+def input_validation(city, country):
+
     if not re.search("^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$", city):
         print("***********************************************")
         print("Please DO NOT use special characters or numbers")
@@ -66,18 +83,7 @@ def validate_city(data, country, city):
         print("Please DO NOT use special characters or numbers")
         print("***********************************************")
         return False
-
-    if data['cod'] == '404':
-        print("***********************************************")
-        print(f"Invalid City or Country: {city},{country}.")
-        print("Please check the city name and country code provided")
-        print("Please insert a valid Country CODE with 2 letters")
-        print("The country code and city need match")
-        print("Example: DUBLIN - IE for city Dublin and country Ireland")
-        print("***********************************************")
-        return False
-    else:
-        return True
+    return True
 
 
 def api_request(city, country, KEY):
@@ -96,5 +102,3 @@ def main():
 
 print("Check the today's weather in your city")
 main()
-
-# get_weather()
