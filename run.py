@@ -47,7 +47,8 @@ def validate_city(data, country, city):
 
 def input_validation(city, country):
     """
-    Validate 
+    Validate the input data before send the request to 
+    API to avoit code injection.
     """
     if not re.search("^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$", city):
         print("***********************************************")
