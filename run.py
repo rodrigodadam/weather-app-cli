@@ -20,8 +20,8 @@ def get_weather():
         city = input("Enter the city name here: ")
         country = input("Enter the country CODE: ")
 
-        api_url = get_api_url(city, country, KEY)
-        result = requests.get(api_url)
+        payload = api_request(city, country, KEY)
+        result = requests.get(payload)
         data = result.json()
 
         if validate_city(data, country, city):
@@ -80,11 +80,11 @@ def validate_city(data, country, city):
         return True
 
 
-def get_api_url(city, country, KEY):
-    api_url = (
+def api_request(city, country, KEY):
+    payload = (
             'https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={}'
             .format(city, country, KEY))
-    return api_url
+    return payload
 
 
 def main():
