@@ -39,8 +39,6 @@ def get_weather():
     country = data['sys']['country']
     date_time = datetime.now().strftime("%d %b %Y")
 
-
-
     print("*****************************************************")
     print(f"* Weather Status for {city} - Today {date_time} *")
     print("*****************************************************")
@@ -70,7 +68,7 @@ def validate_city(data, country, city):
         print("Please DO NOT use special characters or numbers")
         print("***********************************************")
         return False
-        
+
     if data['cod'] == '404':
         print("***********************************************")
         print(f"Invalid City or Country: {city},{country}.")
