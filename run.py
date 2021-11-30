@@ -110,5 +110,5 @@ def render(data):
 
 
 print("Check the today's weather in your city\n")
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+warnings.filterwarnings('ignore', message='Unverified HTTPS request')
 get_weather()
