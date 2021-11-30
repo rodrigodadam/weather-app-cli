@@ -79,7 +79,7 @@ def api_request(city, country):
             'https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={}'
             .format(city, country, KEY))
     result = requests.get(endpoint, verify=False)
-    return result.json()
+    return result.json().filterwarnings('ignore', message='Unverified HTTPS request')
 
 
 def render(data):
@@ -110,5 +110,4 @@ def render(data):
 
 
 print("Check the today's weather in your city\n")
-warnings.filterwarnings('ignore', message='Unverified HTTPS request')
 get_weather()
