@@ -1,8 +1,6 @@
 import requests
 import os
 import re
-import urllib3
-from urllib3 import request
 from datetime import datetime
 if os.path.exists("env.py"):
     import env
@@ -77,8 +75,7 @@ def api_request(city, country):
     endpoint = (
             'https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={}'
             .format(city, country, KEY))
-    result = requests.get(endpoint, verify=False)
-    urllib3.disable_warnings(category: Type[Warning] = <class 'urllib3.exceptions.HTTPWarning'>)
+    result = requests.get(endpoint, verify=True)
     return result.json()
 
 
