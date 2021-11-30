@@ -1,9 +1,6 @@
 import requests
 import os
 import re
-import json
-import sys
-import urllib3
 from datetime import datetime
 if os.path.exists("env.py"):
     import env
@@ -79,7 +76,7 @@ def api_request(city, country):
             'https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={}'
             .format(city, country, KEY))
     result = requests.get(endpoint, verify=False)
-    return result.json().filterwarnings('ignore', message='Unverified HTTPS request')
+    return result.json()
 
 
 def render(data):
