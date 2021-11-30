@@ -1,7 +1,6 @@
 import requests
 import os
 import re
-import sys
 from datetime import datetime
 if os.path.exists("env.py"):
     import env
@@ -13,17 +12,16 @@ def get_weather():
     """
     while True:
         print("Please Enter the City Name and Country Code.")
-        print("City should be a real city follow correct Country CODE.")
+        print("The city must be a real city, following the correct country code.")
         print("Example: City -> London, Country -> GB")
 
-        city = input("Enter the city name here: ")
+        city = input("Enter the city name: ")
         country = input("Enter the country CODE: ")
 
         if input_validation(city, country):
             data = api_request(city, country)
             if validate_city(data, country, city):
                 break
-            
     render(data)
 
 
@@ -31,7 +29,7 @@ def validate_city(data, country, city):
     """
     Validate the City name
     If the city name are not inside the API db get a error and try again
-    Else, give all info to client
+    Else, give all weather info to client
     """
     if data['cod'] == '404':
         print("***********************************************")
@@ -47,8 +45,8 @@ def validate_city(data, country, city):
 
 def input_validation(city, country):
     """
-    Validate the input data before send the request to 
-    API to avoit code injection.
+    Validate the input data before send the api_request()
+    to avoid code injection.
     """
     if not re.search("^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$", city):
         print("***********************************************")
@@ -65,6 +63,10 @@ def input_validation(city, country):
 
 
 def api_request(city, country):
+    """
+    Prepares the endpoint so that the API request is made and
+    return the request in JSON.
+    """
     KEY = os.environ.get('API_KEY')
     endpoint = (
             'https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={}'
@@ -74,6 +76,10 @@ def api_request(city, country):
 
 
 def render(data):
+    """
+    Create variables to store data from API and
+    render all weather status.
+    """
     temp = ((data['main']['temp']) - 273.15)
     feels_like = ((data['main']['feels_like']) - 273.15)
     temp_min = ((data['main']['temp_min']) - 273.15)
@@ -83,7 +89,7 @@ def render(data):
     wind_speed = data['wind']['speed']
     country = data['sys']['country']
     date_time = datetime.now().strftime("%d %b %Y")
-    
+
     print("*****************************************************")
     print(f"* Weather Status for {data['name']} - Today {date_time} *")
     print("*****************************************************")
@@ -96,12 +102,5 @@ def render(data):
     print(f"Current Wind Speed------------> {wind_speed} kmph")
 
 
-def main():
-    """
-    Run all functions
-    """
-    weather = get_weather()
-
-
 print("Check the today's weather in your city")
-main()
+get_weather()
