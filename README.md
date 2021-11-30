@@ -14,7 +14,7 @@ Link to the cli-application available [HERE.](https://weather-app-cli.herokuapp.
 <br>
 <div align="center">
 
-![Home Page]()
+![Home Page](https://github.com/rodrigodadam/weather-app-cli/blob/main/home.png)
 
 </div>
 <br>
