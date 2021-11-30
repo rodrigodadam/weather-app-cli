@@ -157,8 +157,6 @@ Enable automatic deployment:<br>
 
 Click the Deploy tab<br>
 In the Automatic deploys section, choose the branch you want to deploy from then click Enable Automation Deploys.<br>
-Run Locally<br>
-Note: The project will not run locally with database connections unless the user sets up an env.py file configuring IP, PORT, DATABASE_URL and SECRET_KEY. You must have the connection details in order to do this. These details are private and not disclosed in this repository for security purposes.<br>
 
 Navigate to the GitHub Repository.<br>
 Click the Code drop down menu.<br>
