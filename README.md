@@ -9,7 +9,7 @@ The project purpose is: build a command-line application that allows your users 
 For this reason I've used the Weather API.
 
 
-Link to the web-application available [HERE.]()
+Link to the cli-application available [HERE.](https://weather-app-cli.herokuapp.com/)
 
 <br>
 <div align="center">
@@ -152,11 +152,7 @@ Set environment variables:<br>
 
 Click the settings tab and then click the Reveal Config Vars button and add the following:<br>
 
-key: DATABASE_URL, (postgress uri)<br>
-key: DEBUG, False<br>
-key: IP, 0.0.0.0<br>
-key: PORT, 5000<br>
-key: SECRET_KEY, value: (This is a custom secret key set up for configuration to keep client-side sessions secure)<br>
+key: KEY, value: (This is a custom secret key set up for configuration to keep client-side sessions secure)<br>
 Enable automatic deployment:<br>
 
 Click the Deploy tab<br>
