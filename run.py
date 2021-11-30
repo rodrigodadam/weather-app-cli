@@ -12,11 +12,11 @@ def get_weather():
     """
     while True:
         print("Please Enter the City Name and Country Code.")
-        print("The city must be a real city, following the correct country code.")
-        print("Example: City -> London, Country -> GB")
+        print("City must be a real city, following the correct country code.")
+        print("Example: City -> London, Country -> GB\n")
 
-        city = input("Enter the city name: ")
-        country = input("Enter the country CODE: ")
+        city = input("Enter the city name:\n ")
+        country = input("Enter the country CODE:\n ")
 
         if input_validation(city, country):
             data = api_request(city, country)
@@ -38,7 +38,7 @@ def validate_city(data, country, city):
         print("Please insert a valid Country CODE with 2 letters")
         print("The country code and city need match")
         print("Example: DUBLIN - IE for city Dublin and country Ireland")
-        print("***********************************************")
+        print("***********************************************\n")
         return False
     return True
 
@@ -102,5 +102,5 @@ def render(data):
     print(f"Current Wind Speed------------> {wind_speed} kmph")
 
 
-print("Check the today's weather in your city")
+print("Check the today's weather in your city\n")
 get_weather()
