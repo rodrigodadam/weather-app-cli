@@ -111,4 +111,3 @@ def render(data):
 print("Check the today's weather in your city\n")
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 get_weather()
-
