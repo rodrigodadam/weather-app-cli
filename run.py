@@ -27,10 +27,19 @@ def get_weather():
 
 def validate_city(data, country, city):
     """
-    Validate the City name
-    If the city name are not inside the API db get a error and try again
+    Validate the City name and country length size
+    If the city name are not inside the API db get a error
+    If the country code are not correct with 2 characters get a error
+    Ff an error occurs the program try again
     Else, give all weather info to client
     """
+    if len(country) !=2:
+        print("***********************************************")
+        print(f"Incorrect Country code for: {country}.")
+        print("Please Insert correct Country code with 2 characters")
+        print("Example: IE for Ireland or BR for Brazil")
+        print("***********************************************\n")
+        return False
     if data['cod'] == '404':
         print("***********************************************")
         print(f"Invalid City or Country: {city},{country}.")
