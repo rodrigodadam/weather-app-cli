@@ -75,7 +75,7 @@ def api_request(city, country):
     endpoint = (
             'https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={}'
             .format(city, country, KEY))
-    result = requests.get(endpoint, verify=True)
+    result = requests.get(endpoint, verify=False)
     return result.json()
 
 
