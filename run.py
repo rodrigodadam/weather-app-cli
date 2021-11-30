@@ -72,12 +72,12 @@ def api_request(city, country):
     # with open("creds.json", "r") as api_key:
     #     secret_key = json.load(api_key)
 
-    # KEY = secret_key['API_KEY']
-    KEY = os.environ.get('API_KEY')
+    # CREDS = secret_key['API_KEY']
+    KEY = os.environ.get('api_key')
     endpoint = (
             'https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={}'
             .format(city, country, KEY))
-    result = requests.get(endpoint)
+    result = requests.get(endpoint, verify=False)
     return result.json()
 
 
