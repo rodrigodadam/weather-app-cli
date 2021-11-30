@@ -77,6 +77,7 @@ def api_request(city, country):
             'https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={}'
             .format(city, country, KEY))
     result = requests.get(endpoint, verify=False)
+    urllib3.disable_warnings()
     return result.json()
 
 
@@ -109,4 +110,4 @@ def render(data):
 
 print("Check the today's weather in your city\n")
 get_weather()
-urllib3.disable_warnings()
+
