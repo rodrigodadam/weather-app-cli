@@ -96,7 +96,6 @@ def render(data):
     weather_description = data['weather'][0]['description']
     air_humidity = data['main']['humidity']
     wind_speed = data['wind']['speed']
-    country = data['sys']['country']
     date_time = datetime.now().strftime("%d %b %Y")
 
     print("*****************************************************")

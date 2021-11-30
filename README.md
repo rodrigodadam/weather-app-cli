@@ -75,6 +75,10 @@ This project has 2 types of validation, one is REGEX validation, used before the
 
 Insert a option to the client choice the weather forecast for the next days. 
 
+### Problems and Solutions
+
+To deploy this project on HEROKU I need to use the disable_warnings from urllib3 pac. Unfortunately heroku do not work well with OpenWeather API and get a https error.
+
 <div align="right"><a href="#top">🔝</a></div>
 
 ## TECHNOLOGIES USED
