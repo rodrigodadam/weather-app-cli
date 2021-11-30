@@ -173,3 +173,15 @@ Once the project has been loaded into an IDE of choice, run the following comman
 pip install -r requirements.txt<br>
 
   <div align="right"><a href="#top">🔝</a></div>
+
+CREDITS
+
+— Researches —
+
+To fix some bugs that I do not found inside documentation I used the Community Stackoverflow to help me with this bugs and Google.com
+
+ACKNOWLEDGEMENTS
+
+My Dear Friend Rimom Costa for all support.
+My Mentor Anthony for continuous helpful feedback.
+All Code Institute Tutor Support.
