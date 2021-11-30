@@ -4,8 +4,6 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 import os
 import re
 from datetime import datetime
-if os.path.exists("env.py"):
-    import env
 
 
 def get_weather():
@@ -69,10 +67,6 @@ def api_request(city, country):
     Prepares the endpoint so that the API request is made and
     return the request in JSON.
     """
-    # with open("creds.json", "r") as api_key:
-    #     secret_key = json.load(api_key)
-
-    # CREDS = secret_key['API_KEY']
     KEY = os.environ.get('api_key')
     endpoint = (
             'https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={}'
@@ -111,4 +105,3 @@ def render(data):
 print("Check the today's weather in your city\n")
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 get_weather()
-
