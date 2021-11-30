@@ -1,4 +1,6 @@
 import requests
+import urllib3
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 import os
 import re
 from datetime import datetime
@@ -107,5 +109,6 @@ def render(data):
 
 
 print("Check the today's weather in your city\n")
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 get_weather()
 
