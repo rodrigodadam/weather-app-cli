@@ -1,5 +1,4 @@
 import requests
-import urllib3
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 import os
 import re
@@ -30,7 +29,7 @@ def validate_city(data, country, city):
     Validate the City name and country length size
     If the city name are not inside the API db get a error
     If the country code are not correct with 2 characters get a error
-    Ff an error occurs the program try again
+    If an error occurs the program try again
     Else, give all weather info to client
     """
     if len(country) != 2:
