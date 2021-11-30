@@ -1,6 +1,8 @@
 import requests
 import os
 import re
+import json
+import sys
 from datetime import datetime
 if os.path.exists("env.py"):
     import env
@@ -67,7 +69,11 @@ def api_request(city, country):
     Prepares the endpoint so that the API request is made and
     return the request in JSON.
     """
-    KEY = os.environ.get('API_KEY')
+    with open("creds.json", "r") as api_key:
+        secret_key = json.load(api_key)
+
+    KEY = secret_key['API_KEY']
+    # KEY = os.environ.get('API_KEY')
     endpoint = (
             'https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={}'
             .format(city, country, KEY))
