@@ -3,7 +3,6 @@ import os
 import re
 import json
 import sys
-import urllib3
 from datetime import datetime
 if os.path.exists("env.py"):
     import env
@@ -110,5 +109,4 @@ def render(data):
 
 
 print("Check the today's weather in your city\n")
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 get_weather()
