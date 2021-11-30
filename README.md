@@ -6,7 +6,7 @@
 
 This project was created to complete the third Milestone Project for the Code Institute's Full Stack Developer course.
 The project purpose is: build a command-line application that allows your users to manage a common dataset about a particular domain.
-For this reason I.ve used the Weather API.
+For this reason I've used the Weather API.
 
 
 Link to the web-application available [HERE.]()
@@ -44,8 +44,8 @@ From command-line the user can input the City Name and the Country Code to check
 
 ## Users Experience Plan
 
-This is a command-line application using Code Institute Templates to use properly this App after deployment.
-The App consisted in a unique command-line data the user can insert the City name and Country Code to check the weather status, if the City and Code do not match, the user need insert the data again until get a correct information the CLI will work. After give all the weather status to the user the program stop works.
+This is a command-line application using Code Institute Templates to properly use this App after deployment.
+The App consists of a unique command-line data the user can insert the City name and Country Code to check the weather status, if the City and Code do not match, the user needs to insert the data again until get the correct information the CLI will work. After giving all the weather status to the user the program stops working.
 
 <div align="right"><a href="#top">🔝</a></div>
 
@@ -69,18 +69,11 @@ Using a CODE INSTITUTE TEMPLATE for this CLI APP.
 ### Existing Features
 
 This project is well-structured to work efficiently.
-The project has a simple data validation that check if the City and Country match to give a correct weather information based in the API service data store.
-This project has also a REGEX validation to avoid the user inject ane spectial character into th program.
-
+This project has 2 types of validation, one is REGEX validation, used before the input data goes to the endpoint avoiding code injection. Also the second is a data validation that checks if the City and Country match to give correct weather information based in the API service data store.
+ 
 ### Features Left To Implement
 
-Refactor the project to OOP principles 
-Refactor the project to SOLID principles
-
-Insert a pop up to give confirmation about the message sent.
-Change to official D Group Database after aprovation.
-Insert a new field with a list of all produts that D Group sells.
-
+Insert a option to the client choice the weather forecast for the next days. 
 
 <div align="right"><a href="#top">🔝</a></div>
 
