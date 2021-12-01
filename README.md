@@ -71,7 +71,7 @@ Using a CODE INSTITUTE TEMPLATE for this CLI APP.
 
 This project is well-structured to work efficiently.
 
-- As soon you open this webapp you can see some information how use it to give you the correct weather information to an input city.
+- As soon you open this webapp you can see some information how use it to give you the correct weather information to an input city:
   - You need input a correct city name as image below.
 
 ![City Name](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/cityname.png)
@@ -79,6 +79,23 @@ This project is well-structured to work efficiently.
   - After insert a real city name, will be asked to you input a country code. This code is an ISO CODE based in 2 characters only.
 
 ![Country Code](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/countrycode.png)
+
+  - If you insert a correct City name and Country Code you will see a weather status or the day in the informed city.
+
+![Weather Info](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/weatherinfocorrect.png)
+
+- Input validation:
+  - This webapp has a REGEX input validation before the input data goes to api_request to avoid code injection. 
+  - If you try insert any special characters or number you'll see a error message informing about the problem.
+  - The webapp will restart until you insert the correct data.
+
+![REGEX](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/regex.png)
+
+- City and Country Validation:
+  - 
+
+
+
 
 
 This project has 2 types of validation, one is REGEX validation, used before the input data goes to the endpoint avoiding code injection. Also the second is a data validation that checks if the City and Country match to give correct weather information based in the API service data store.
