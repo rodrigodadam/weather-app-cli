@@ -72,11 +72,11 @@ Using a CODE INSTITUTE TEMPLATE for this CLI APP.
 This project is well-structured to work efficiently.
 
 - As soon you open this webapp you can see some information how use it to give you the correct weather information to an input city:
-  - You need input a correct city name as image below.
+  - You need to input the correct city name as in the image below.
 
 ![City Name](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/cityname.png)
 
-  - After insert a real city name, will be asked to you input a country code. This code is an ISO CODE based in 2 characters only.
+  - After inserting a real city name, you will be asked to input a country code. This code is an ISO CODE based in 2 characters only.
 
 ![Country Code](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/countrycode.png)
 
@@ -86,18 +86,18 @@ This project is well-structured to work efficiently.
 
 - Input validation:
   - This webapp has a REGEX input validation before the input data goes to api_request to avoid code injection. 
-  - If you try insert any special characters or number you'll see a error message informing about the problem.
+  - If you try to insert any special characters or number you'll see a error message informing about the problem.
   - The webapp will restart until you insert the correct data.
 
 ![REGEX](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/regex.png)
 
 - City and Country Validation:
-  - If you insert a wrong city name you'll se a message error informing that your inserted information (city name) is wrong or you have input wrong country code or the city do not match with the country informed.
+  - If you insert a wrong city name you'll se a message error informing that your inserted information (city name) is wrong or you have input wrong country code or the city does not match with the country informed.
 
 ![Wrong City Name](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/wrongcityinput.png)
 
 - Country Code Validation:
-  - If you try insert a country code with more them 2 characters the system will give the exatly message error.
+  - If you try to insert a country code with more than 2 characters the system will give the exact message error.
   - The webapp will restart until the correct data be inserted.
 
 ![Country](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/countryerror.png)
@@ -215,6 +215,6 @@ To fix some bugs that I do not found inside documentation I used the Community S
 
 ACKNOWLEDGEMENTS
 
-My Dear Friend Rimom Costa for all support.
-My Mentor Anthony for continuous helpful feedback.
-All Code Institute Tutor Support.
+- My Dear Friend Rimom Costa for all support.<br>
+- My Mentor Anthony for continuous helpful feedback.<br>
+- All Code Institute Tutor Support.<br>
