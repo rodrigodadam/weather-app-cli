@@ -92,13 +92,17 @@ This project is well-structured to work efficiently.
 ![REGEX](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/regex.png)
 
 - City and Country Validation:
-  - 
+  - If you insert a wrong city name you'll se a message error informing that your inserted information (city name) is wrong or you have input wrong country code or the city do not match with the country informed.
+
+![Wrong City Name](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/wrongcityinput.png)
+
+- Country Code Validation:
+  - If you try insert a country code with more them 2 characters the system will give the exatly message error.
+  - The webapp will restart until the correct data be inserted.
+
+![Country](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/countryerror.png)
 
 
-
-
-
-This project has 2 types of validation, one is REGEX validation, used before the input data goes to the endpoint avoiding code injection. Also the second is a data validation that checks if the City and Country match to give correct weather information based in the API service data store.
  
 ### Features Left To Implement
 
