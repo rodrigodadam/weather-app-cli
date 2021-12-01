@@ -14,7 +14,7 @@ Link to the cli-application available [HERE.](https://weather-app-cli.herokuapp.
 <br>
 <div align="center">
 
-![Home Page](https://github.com/rodrigodadam/weather-app-cli/blob/main/home.png)
+![Home Page](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/home.png)
 
 </div>
 <br>
@@ -57,6 +57,7 @@ The App consists of a unique command-line data the user can insert the City name
 
 Using a CODE INSTITUTE TEMPLATE for this CLI APP.
 
+
 <br>
 
 <div align="right"><a href="#top">🔝</a></div>
@@ -69,6 +70,17 @@ Using a CODE INSTITUTE TEMPLATE for this CLI APP.
 ### Existing Features
 
 This project is well-structured to work efficiently.
+
+- As soon you open this webapp you can see some information how use it to give you the correct weather information to an input city.
+  - You need input a correct city name as image below.
+
+![City Name](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/cityname.png)
+
+  - After insert a real city name, will be asked to you input a country code. This code is an ISO CODE based in 2 characters only.
+
+![Country Code](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/structure/countrycode.png)
+
+
 This project has 2 types of validation, one is REGEX validation, used before the input data goes to the endpoint avoiding code injection. Also the second is a data validation that checks if the City and Country match to give correct weather information based in the API service data store.
  
 ### Features Left To Implement
@@ -112,7 +124,7 @@ To deploy this project on HEROKU I need to use the disable_warnings from urllib3
 
 Testing is required on all features and user stories documented in this README. 
 
- - PYTHON Code must pass through the [PEP* Validator](https://github.com/rodrigodadam/weather-app-cli/blob/main/pep8-weatherapp.png)
+ - PYTHON Code must pass through the [PEP* Validator](https://github.com/rodrigodadam/weather-app-cli/blob/main/images/pep8-weatherapp.png)
 
 
 ## Deployment
